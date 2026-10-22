@@ -17,9 +17,11 @@ Passwords must be 8–72 bytes. Registration and login return a signed JWT. Send
 | `POST` | `/api/auth/register` | Public |
 | `POST` | `/api/auth/login` | Public |
 | `GET` | `/api/auth/me` | Authenticated |
+| `PUT` | `/api/auth/password` | Authenticated |
 
 Both authentication endpoints accept JSON with `email` and `password`. Email addresses are normalized to lowercase.
 The current-user endpoint verifies the bearer token and confirms the user account still exists.
+The password update endpoint accepts JSON with `email` and `password`. It requires a valid bearer token and only updates the password when the supplied email matches the signed-in account.
 
 ## Products
 

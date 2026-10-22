@@ -10,6 +10,7 @@ import ProductsPage from "./pages/products/ProductsPage";
 import ProductDetailsPage from "./pages/products/ProductDetailsPage";
 import { CartProvider } from "./cart/CartProvider";
 import CartPage from "./pages/cart/CartPage";
+import LogoutPage from "./pages/auth/LogoutPage";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path="/cart" element={<CartPage />} />
             <Route path="/login" element={<AuthPage mode="login" />} />
             <Route path="/register" element={<AuthPage mode="register" />} />
+            <Route path="/logout" element={<LogoutPage />} />
             <Route element={<RequireAuth />}>
               <Route path="/account" element={<AccountPage />} />
               <Route path="/products/new" element={<NewProductPage />} />

@@ -84,3 +84,11 @@ export function deleteProduct(id) {
     method: "DELETE",
   });
 }
+
+export function resetPassword(credentials) {
+  return authenticatedRequest("/api/auth/password", {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(credentials),
+  });
+}

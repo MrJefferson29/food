@@ -442,6 +442,24 @@ app.post("/api/auth/login", authLimiter, async (request, response, next) => {
   }
 });
 
+app.put("/api/auth/password", requireAuth, async (request, response, next) => {
+  try {
+    const email = validateCredentials(
+      request.body?.email,
+      request.body?.password
+    );
+    const user = await User.findOne({ _id: request.userId, email });
+    if (!user) {
+      throw httpError(403, "The email must match the signed-in account");
+    }
+    user.password = await bcrypt.hash(request.body.password, 12);
+    await user.save();
+    return response.json({ message: "Password updated successfully" });
+  } catch (error) {
+    return next(error);
+  }
+});
+
 app.get("/api/auth/me", requireAuth, async (request, response, next) => {
   try {
     const user = await User.findById(request.userId).select("_id email").lean();

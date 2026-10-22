@@ -158,6 +158,13 @@
   font-weight: 600;
 }
 
+.logout-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 18px;
+}
+
 .auth-secondary:hover,
 .auth-secondary:focus-visible {
   background: #f7f7f5;
