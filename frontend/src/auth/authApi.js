@@ -1,7 +1,6 @@
-const API_URL = (import.meta.env.VITE_API_URL || "http://localhost:5000").replace(
-  /\/+$/,
-  ""
-);
+const API_URL = (
+  import.meta.env.VITE_API_URL || "https://food-7bnn.onrender.com"
+).replace(/\/+$/, "");
 
 async function request(path, options = {}) {
   let response;
