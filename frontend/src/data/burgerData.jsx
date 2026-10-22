@@ -1,0 +1,68 @@
+const burgerData = [
+  {
+    id: "0001",
+    image: "/assets/meats/prime-ribeye.jpg",
+    title: "Prime Ribeye",
+    description: "Richly marbled, tender beef with exceptional flavor.",
+    rating: 5,
+    price: "35.00",
+  },
+  {
+    id: "0002",
+    image: "/assets/meats/prime-filet.jpg",
+    title: "Prime Filet",
+    description: "Exceptionally tender, lean beef with a delicate texture.",
+    rating: 4.5,
+    price: "40.00",
+  },
+  {
+    id: "0003",
+    image: "/assets/meats/ny-strip.jpg",
+    title: "NY Strip",
+    description: "A well-balanced steak with a firm bite and bold beef flavor.",
+    rating: 4,
+    price: "30.00",
+  },
+  {
+    id: "0004",
+    image: "/assets/meats/tri-tip.jpg",
+    title: "Tri-Tip",
+    description: "A versatile bottom sirloin cut with a hearty, beefy flavor.",
+    rating: 4.5,
+    price: "15.00",
+  },
+  {
+    id: "0005",
+    image: "/assets/meats/hanger-steak.jpg",
+    title: "Hanger Steak",
+    description: "A richly flavored butcher's cut with a tender, open grain.",
+    rating: 4,
+    price: "20.00",
+  },
+  {
+    id: "0006",
+    image: "/assets/meats/ground-beef.jpg",
+    title: "Ground Beef",
+    description: "Freshly ground beef, ready for burgers, sauces, and more.",
+    rating: 4.5,
+    price: "12.00",
+  },
+  {
+    id: "0007",
+    image: "/assets/meats/chicken-breast.jpg",
+    title: "Boneless Chicken Breast",
+    description: "Lean, boneless chicken breast, prepared fresh for your kitchen.",
+    rating: 4,
+    price: "12.00",
+  },
+  {
+    id: "0008",
+    image: "/assets/meats/ora-king-salmon.jpg",
+    title: "Ora King Salmon",
+    description: "Vibrant, buttery salmon with a silky texture and rich flavor.",
+    rating: 5,
+    price: "30.00",
+  },
+];
+
+export default burgerData;

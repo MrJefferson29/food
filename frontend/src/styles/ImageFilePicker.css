@@ -1,0 +1,117 @@
+.image-file-picker {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 9px;
+  margin-bottom: 18px;
+}
+
+.image-file-picker-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+.auth-card .image-file-picker-input,
+.product-edit-form .image-file-picker-input {
+  width: 1px;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.image-file-picker-input:focus-visible + .image-file-picker-button {
+  outline: 3px solid rgba(247, 190, 39, 0.35);
+  outline-offset: 3px;
+}
+
+.image-file-picker-button {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0;
+  padding: 9px 14px;
+  border: 1px solid #642f21;
+  border-radius: 5px;
+  color: #fff;
+  background: #642f21;
+  cursor: pointer;
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: background-color 150ms ease, border-color 150ms ease;
+}
+
+.image-file-picker-button:hover {
+  border-color: #4c2117;
+  background: #4c2117;
+}
+
+.image-file-picker-hint {
+  color: #777168;
+  font-size: 0.8rem;
+}
+
+.image-file-preview-list {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 2px;
+}
+
+.image-file-preview {
+  position: relative;
+  display: flex;
+  width: 104px;
+  flex-direction: column;
+  gap: 5px;
+  overflow: hidden;
+  padding: 6px;
+  border: 1px solid #e8e1d5;
+  border-radius: 7px;
+  background: #fff;
+}
+
+.image-file-preview img {
+  width: 100%;
+  height: 72px;
+  border-radius: 4px;
+  background: #f3f0e9;
+  object-fit: cover;
+}
+
+.image-file-preview > span {
+  overflow: hidden;
+  color: #514a41;
+  font-size: 0.7rem;
+  line-height: 1.25;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.image-file-remove {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: grid;
+  width: 24px;
+  height: 24px;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  color: #fff;
+  background: rgba(41, 37, 31, 0.82);
+  cursor: pointer;
+  font-size: 0.68rem;
+}
+
+.image-file-remove:hover {
+  background: #b42318;
+}
