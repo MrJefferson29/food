@@ -427,8 +427,23 @@ footer ul li{
 
 @media (max-width: 767px) {
   /* Hero Section */
+  .hero_section .hero_text {
+    width: 100%;
+    padding: 0 8px;
+  }
+
   .hero_section .hero_text h1 {
-    font-size: 5.5rem;
+    max-width: 100%;
+    font-size: clamp(3rem, 15vw, 5.5rem);
+    letter-spacing: clamp(0px, 0.8vw, 3px);
+    overflow-wrap: anywhere;
+  }
+
+  .hero_section .hero_text h2 {
+    max-width: 100%;
+    font-size: clamp(1.65rem, 7vw, 2.5rem);
+    letter-spacing: clamp(0px, 0.6vw, 3px);
+    overflow-wrap: anywhere;
   }
 
   /* Menu section  */
