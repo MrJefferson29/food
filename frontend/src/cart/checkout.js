@@ -24,7 +24,7 @@ export function createOrderEmail(items, subtotal) {
 
   const subject = `Order request - Meat Market - ${new Date().toLocaleDateString("en-US")}`;
   const body = [
-    "MEAT MARKET",
+    "PASTURE CHOICE BEEF",
     "LOCAL SUPPLY. EXCEPTIONAL QUALITY.",
     divider,
     "ORDER REQUEST",
@@ -43,11 +43,16 @@ export function createOrderEmail(items, subtotal) {
     "Meat Market Customer",
   ].join("\n");
 
+  const query = new URLSearchParams({ to: ORDER_EMAIL, subject, body });
+  const mailtoUrl = `mailto:${ORDER_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
   return {
     recipient: ORDER_EMAIL,
     subject,
     body,
-    url: `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(ORDER_EMAIL)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`,
+    gmailAppUrl: `googlegmail://co?${query.toString()}`,
+    androidIntentUrl: `intent://co?${query.toString()}#Intent;scheme=googlegmail;package=com.google.android.gm;S.browser_fallback_url=${encodeURIComponent(mailtoUrl)};end`,
+    mailtoUrl,
   };
 }
 

@@ -50,14 +50,22 @@ function CartPage() {
     const order = createOrderEmail(items, subtotal);
     checkoutWindowBlurred.current = false;
     checkoutPending.current = true;
-    const checkoutWindow = window.open(order.url, "_blank");
-    if (!checkoutWindow) {
-      checkoutPending.current = false;
-      setShowClearPrompt(false);
-      window.alert("Allow pop-ups for this site to open your Gmail order.");
-      return;
-    }
-    checkoutWindow.opener = null;
+    const isAndroid = /Android/i.test(navigator.userAgent);
+    window.location.href = isAndroid
+      ? order.androidIntentUrl
+      : order.gmailAppUrl;
+
+    window.setTimeout(() => {
+      if (
+        checkoutPending.current &&
+        !checkoutWindowBlurred.current &&
+        document.visibilityState === "visible" &&
+        document.hasFocus()
+      ) {
+        checkoutPending.current = false;
+        window.location.href = order.mailtoUrl;
+      }
+    }, 1500);
   }
 
   function handleClearCart() {

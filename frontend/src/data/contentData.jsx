@@ -127,7 +127,7 @@ export const footerSectionContent = [
 ];
 
 export const copyrightSectionContent = {
-  year: "2025",
+  year: "2026",
   owner: "Pasture Choice Beef",
   ownerUrl: "https://www.facebook.com/share/1bfKYSaatv/",
   reserveText: "All Rights Reserved",
