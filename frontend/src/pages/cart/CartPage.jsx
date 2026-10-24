@@ -50,22 +50,7 @@ function CartPage() {
     const order = createOrderEmail(items, subtotal);
     checkoutWindowBlurred.current = false;
     checkoutPending.current = true;
-    const isAndroid = /Android/i.test(navigator.userAgent);
-    window.location.href = isAndroid
-      ? order.androidIntentUrl
-      : order.gmailAppUrl;
-
-    window.setTimeout(() => {
-      if (
-        checkoutPending.current &&
-        !checkoutWindowBlurred.current &&
-        document.visibilityState === "visible" &&
-        document.hasFocus()
-      ) {
-        checkoutPending.current = false;
-        window.location.href = order.mailtoUrl;
-      }
-    }, 1500);
+    window.location.href = order.mailtoUrl;
   }
 
   function handleClearCart() {
@@ -246,7 +231,7 @@ function CartPage() {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          Your order is open in Gmail. Would you like to clear these items from
+          Your order is open in your email app. Would you like to clear these items from
           your cart?
         </Modal.Body>
         <Modal.Footer>

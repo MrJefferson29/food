@@ -43,15 +43,12 @@ export function createOrderEmail(items, subtotal) {
     "Meat Market Customer",
   ].join("\n");
 
-  const query = new URLSearchParams({ to: ORDER_EMAIL, subject, body });
   const mailtoUrl = `mailto:${ORDER_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
   return {
     recipient: ORDER_EMAIL,
     subject,
     body,
-    gmailAppUrl: `googlegmail://co?${query.toString()}`,
-    androidIntentUrl: `intent://co?${query.toString()}#Intent;scheme=googlegmail;package=com.google.android.gm;S.browser_fallback_url=${encodeURIComponent(mailtoUrl)};end`,
     mailtoUrl,
   };
 }
