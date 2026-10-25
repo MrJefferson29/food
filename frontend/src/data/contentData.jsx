@@ -1,7 +1,7 @@
 export const aboutSectionContent = {
   heading: "Pasture Choice Beef: quality you can taste",
   description:
-    "Pasture Choice Beef brings carefully selected beef and other quality meats to local restaurants. From richly marbled steaks to everyday kitchen staples, find dependable cuts and fresh options for your menu.",
+    "Pasture Choice Beef brings carefully selected beef and other quality meats to respectable restaurants. From richly marbled steaks to everyday kitchen staples, find dependable cuts and fresh options for your menu.",
   buttonText: "Explore Our Selection",
   path: "/products",
 };
@@ -33,7 +33,7 @@ export const menuSectionContent = {
 export const promotionSectionContent = {
   heading: "A better source for your meat selection",
   description: [
-    "From service-ready steaks to everyday staples, Pasture Choice Beef helps local restaurants find quality meat for the dishes their customers love.",
+    "From service-ready steaks to everyday staples, Pasture Choice Beef helps restaurants find quality meat for the dishes their customers love.",
     "Explore a selection chosen with restaurant kitchens in mind:",
   ],
   listItems: [
@@ -41,7 +41,7 @@ export const promotionSectionContent = {
     "🔪 Versatile cuts for a wide range of menus",
     "🍗 Quality poultry and seafood selections",
     "📦 Options for restaurants and professional kitchens",
-    "🤝 A local supplier focused on quality and service",
+    "🤝 A quality supplier focused on quality and service",
   ],
   image: "/assets/promotion/pro.png",
 };
