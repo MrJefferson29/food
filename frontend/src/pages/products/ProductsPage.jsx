@@ -50,7 +50,7 @@ function ProductsPage() {
             <div className="products-market-intro">
               <p className="auth-eyebrow">Pasture Choice marketplace</p>
               <h1 id="products-title">Shop quality cuts</h1>
-              <p>Browse quality meat and seafood from local suppliers.</p>
+              <p>Browse quality meat, chicken, and turkey from local suppliers.</p>
             </div>
             <div className="products-market-filters">
               <label htmlFor="products-category-filter">Filter by category</label>

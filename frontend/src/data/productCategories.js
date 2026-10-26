@@ -15,8 +15,19 @@ const productCategories = {
     "Ribs & Roasts",
     "Offal & Specialty Cuts",
   ],
-  "Fresh Seafood": ["Fresh Finfish", "Shellfish & Crustaceans"],
-  "Prepared Seafood & Sushi": ["Sushi & Sashimi"],
+  Chicken: [
+    "Whole Chicken",
+    "Breasts & Tenders",
+    "Thighs & Drumsticks",
+    "Wings",
+    "Ground Chicken",
+  ],
+  Turkey: [
+    "Whole Turkey",
+    "Breasts & Tenderloins",
+    "Thighs & Drumsticks",
+    "Ground Turkey",
+  ],
 };
 
 export default productCategories;

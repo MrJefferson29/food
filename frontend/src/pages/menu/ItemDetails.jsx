@@ -4,6 +4,7 @@ import Layout from "../../components/layouts/Layout";
 import burgerData from "../../data/burgerData";
 import Rating from "../../utils/Rating";
 import "../../styles/MenuItemStyle.css";
+import AddToCartModal from "../../cart/AddToCartModal";
 import { useCart } from "../../cart/useCart";
 import { useLayoutEffect, useState } from "react";
 
@@ -12,6 +13,7 @@ function ItemDetails() {
   const item = burgerData.find((menuItem) => menuItem.id === id);
   const { addItem } = useCart();
   const [added, setAdded] = useState(false);
+  const [cartItemToAdd, setCartItemToAdd] = useState(null);
 
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
@@ -19,7 +21,7 @@ function ItemDetails() {
 
   const handleAddToCart = () => {
     if (!item) return;
-    addItem({
+    setCartItemToAdd({
       key: `menu:${item.id}`,
       id: item.id,
       type: "menu",
@@ -27,9 +29,14 @@ function ItemDetails() {
       description: item.description,
       image: item.image,
       price: Number(item.price.replaceAll(",", "")),
-      unit: "each",
-      quantity: 1,
+      unit: "lb",
     });
+  };
+
+  const confirmAddToCart = (quantity) => {
+    if (!cartItemToAdd) return;
+    addItem({ ...cartItemToAdd, quantity });
+    setCartItemToAdd(null);
     setAdded(true);
     window.setTimeout(() => setAdded(false), 1800);
   };
@@ -102,6 +109,11 @@ function ItemDetails() {
           )}
         </Container>
       </main>
+      <AddToCartModal
+        item={cartItemToAdd}
+        onClose={() => setCartItemToAdd(null)}
+        onConfirm={confirmAddToCart}
+      />
     </Layout>
   );
 }

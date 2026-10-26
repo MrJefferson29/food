@@ -5,6 +5,7 @@ import Layout from "../../components/layouts/Layout";
 import ImageFilePicker from "../../components/products/ImageFilePicker";
 import Rating from "../../utils/Rating";
 import { useAuth } from "../../auth/useAuth";
+import AddToCartModal from "../../cart/AddToCartModal";
 import productCategories from "../../data/productCategories";
 import {
   deleteProduct,
@@ -37,6 +38,7 @@ function ProductDetailsPage() {
   const [images, setImages] = useState([]);
   const [removedImageIds, setRemovedImageIds] = useState([]);
   const [addedToCart, setAddedToCart] = useState(false);
+  const [cartItemToAdd, setCartItemToAdd] = useState(null);
   const [activeImage, setActiveImage] = useState(0);
 
   useEffect(() => {
@@ -158,7 +160,7 @@ function ProductDetailsPage() {
   }
 
   function handleAddToCart() {
-    addItem({
+    setCartItemToAdd({
       key: `product:${product.id}`,
       id: product.id,
       type: "product",
@@ -167,8 +169,13 @@ function ProductDetailsPage() {
       image: product.images?.[0]?.url || "",
       price: Number(product.price),
       unit: "lb",
-      quantity: 1,
     });
+  }
+
+  function confirmAddToCart(quantity) {
+    if (!cartItemToAdd) return;
+    addItem({ ...cartItemToAdd, quantity });
+    setCartItemToAdd(null);
     setAddedToCart(true);
     window.setTimeout(() => setAddedToCart(false), 1800);
   }
@@ -407,6 +414,11 @@ function ProductDetailsPage() {
           )}
         </Container>
       </main>
+      <AddToCartModal
+        item={cartItemToAdd}
+        onClose={() => setCartItemToAdd(null)}
+        onConfirm={confirmAddToCart}
+      />
     </Layout>
   );
 }

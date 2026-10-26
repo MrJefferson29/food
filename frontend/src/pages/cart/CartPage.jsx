@@ -164,7 +164,7 @@ function CartPage() {
                   <strong>{formatCurrency(subtotal)}</strong>
                 </div>
                 <p className="cart_checkout_note">
-                  Your order request opens in Gmail, ready to send to our team.
+                  Your order request opens in your email app, ready to send to our team.
                 </p>
                 <button
                   className="cart_primary_button cart_checkout_button"
