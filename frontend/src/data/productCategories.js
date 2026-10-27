@@ -28,6 +28,8 @@ const productCategories = {
     "Thighs & Drumsticks",
     "Ground Turkey",
   ],
+  "Fresh Seafood": ["Fresh Finfish", "Shellfish & Crustaceans"],
+  "Prepared Seafood & Sushi": ["Sushi & Sashimi"],
 };
 
 export default productCategories;

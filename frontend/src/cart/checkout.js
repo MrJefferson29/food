@@ -1,4 +1,4 @@
-const ORDER_EMAIL = "pasturechoise@gmail.com";
+const ORDER_EMAIL = "pasturechoice@gmail.com";
 
 const formatCurrency = (amount) =>
   new Intl.NumberFormat("en-US", {

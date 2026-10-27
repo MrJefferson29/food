@@ -45,6 +45,8 @@ const productCategories = {
     "Thighs & Drumsticks",
     "Ground Turkey",
   ],
+  "Fresh Seafood": ["Fresh Finfish", "Shellfish & Crustaceans"],
+  "Prepared Seafood & Sushi": ["Sushi & Sashimi"],
 };
 const allowedOrigins = (process.env.CORS_ORIGINS || "")
   .split(",")
